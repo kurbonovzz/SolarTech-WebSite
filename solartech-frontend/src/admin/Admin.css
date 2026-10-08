@@ -1,0 +1,1647 @@
+* {
+    box-sizing: border-box;
+}
+
+.solar-admin {
+    min-height: 100vh;
+    display: flex;
+    background: #f8faf8;
+    color: #111814;
+    font-family:
+            Inter,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.solar-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+
+    width: 248px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 25px 16px;
+
+    background:
+            radial-gradient(
+                    circle at 45% 73%,
+                    rgba(103, 157, 55, .25),
+                    transparent 23%
+            ),
+            linear-gradient(
+                    180deg,
+                    #061b12 0%,
+                    #071d15 55%,
+                    #04150f 100%
+            );
+
+    color: #fff;
+
+    z-index: 100;
+}
+
+.solar-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 14px 28px;
+
+    border-bottom:
+            1px solid rgba(255,255,255,.09);
+}
+
+.solar-logo-sun {
+    color: #ffd229;
+
+    font-size: 39px;
+
+    line-height: 1;
+
+    filter:
+            drop-shadow(
+                    0 0 7px
+                    rgba(255,211,45,.25)
+            );
+}
+
+.solar-logo-text {
+    font-size: 26px;
+    font-weight: 800;
+
+    letter-spacing: -.8px;
+}
+
+.solar-logo-text span {
+    color: #58a936;
+}
+
+.solar-logo-sub {
+    margin-top: 5px;
+
+    color: #87968c;
+
+    font-size: 11px;
+
+    letter-spacing: 1.7px;
+}
+
+.solar-nav {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    margin-top: 39px;
+}
+
+.solar-nav-item {
+    height: 51px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 0 18px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #e9efeb;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+            background .2s ease,
+            transform .2s ease;
+}
+
+.solar-nav-item:hover {
+    background: rgba(255,255,255,.06);
+}
+
+.solar-nav-item.active {
+    background:
+            linear-gradient(
+                    135deg,
+                    #72bd42,
+                    #4e9b2e
+            );
+
+    box-shadow:
+            0 8px 22px
+            rgba(80,153,43,.22);
+}
+
+.solar-nav-icon {
+    width: 23px;
+
+    font-size: 19px;
+
+    text-align: center;
+}
+
+.solar-sidebar-bottom {
+    margin-top: auto;
+}
+
+.solar-house {
+    position: relative;
+
+    height: 195px;
+
+    margin:
+            0 -16px 16px;
+
+    overflow: hidden;
+
+    background:
+            radial-gradient(
+                    circle at 39% 43%,
+                    rgba(255,221,91,.8),
+                    transparent 3%
+            ),
+            radial-gradient(
+                    circle at 39% 43%,
+                    rgba(255,215,80,.22),
+                    transparent 18%
+            );
+}
+
+.solar-house-sun {
+    position: absolute;
+
+    left: 67px;
+    top: 40px;
+
+    color: #ffd75d;
+
+    font-size: 50px;
+
+    filter:
+            drop-shadow(
+                    0 0 20px
+                    rgba(255,212,64,.8)
+            );
+}
+
+.solar-house-panel {
+    position: absolute;
+
+    left: 74px;
+    bottom: 58px;
+
+    color: #3c7140;
+
+    font-size: 70px;
+
+    transform: rotate(-8deg);
+}
+
+.solar-house-body {
+    position: absolute;
+
+    left: 34px;
+    bottom: 24px;
+
+    width: 145px;
+    height: 61px;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #523923,
+                    #1c241c
+            );
+
+    clip-path:
+            polygon(
+                    0 40%,
+                    48% 0,
+                    100% 40%,
+                    100% 100%,
+                    0 100%
+            );
+}
+
+.solar-house-body span {
+    position: absolute;
+
+    bottom: 9px;
+
+    width: 12px;
+    height: 17px;
+
+    background: #f3d253;
+}
+
+.solar-house-body span:first-child {
+    left: 43px;
+}
+
+.solar-house-body span:last-child {
+    right: 35px;
+}
+
+.solar-logout {
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border:
+            1px solid rgba(255,255,255,.15);
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.solar-logout:hover {
+    background: rgba(255,255,255,.06);
+}
+
+.solar-footer {
+    margin-top: 34px;
+
+    padding-top: 25px;
+
+    border-top:
+            1px solid rgba(255,255,255,.09);
+
+    text-align: center;
+}
+
+.solar-footer strong {
+    display: block;
+
+    font-size: 13px;
+}
+
+.solar-footer span {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #819087;
+
+    font-size: 12px;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.solar-main {
+    width: calc(100% - 248px);
+
+    min-height: 100vh;
+
+    margin-left: 248px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.solar-header {
+    height: 87px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 36px;
+
+    background: #fff;
+
+    border-bottom:
+            1px solid #e8ece8;
+}
+
+.solar-menu-button {
+    border: 0;
+    background: none;
+
+    margin-right: 38px;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.solar-search {
+    width: 458px;
+    height: 47px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 17px;
+
+    border:
+            1px solid #dfe5df;
+
+    border-radius: 10px;
+
+    background: #fff;
+}
+
+.solar-search span {
+    color: #9aa39d;
+
+    font-size: 24px;
+}
+
+.solar-search input {
+    width: 100%;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: #1a201c;
+
+    font-size: 13px;
+}
+
+.solar-header-right {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 26px;
+}
+
+.solar-notification {
+    position: relative;
+
+    border: 0;
+
+    background: none;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+.solar-notification b {
+    position: absolute;
+
+    top: -8px;
+    right: -8px;
+
+    width: 19px;
+    height: 19px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #367e32;
+
+    color: #fff;
+
+    font-size: 9px;
+}
+
+.solar-profile {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding-left: 25px;
+
+    border-left:
+            1px solid #e5e9e5;
+}
+
+.solar-avatar {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #234b31,
+                    #587d53
+            );
+
+    color: #fff;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.solar-profile div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.solar-profile strong {
+    font-size: 14px;
+}
+
+.solar-profile span {
+    color: #7c867e;
+
+    font-size: 11px;
+}
+
+.solar-chevron {
+    margin-left: 14px;
+
+    font-size: 18px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.solar-content {
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding: 34px 34px 50px;
+}
+
+/* =========================
+   HBOARD
+========================= */
+
+.hboard-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 27px;
+}
+
+.hboard-heading h1 {
+    margin: 0;
+
+    font-size: 31px;
+    font-weight: 800;
+
+    letter-spacing: -.8px;
+}
+
+.hboard-heading h1 span {
+    font-size: 27px;
+}
+
+.hboard-heading p {
+    margin: 7px 0 0;
+
+    color: #66736a;
+
+    font-size: 15px;
+}
+
+.date-card {
+    min-width: 184px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 13px 17px;
+
+    border:
+            1px solid #e2e7e2;
+
+    border-radius: 11px;
+
+    background: #fff;
+
+    box-shadow:
+            0 2px 8px
+            rgba(20,40,25,.025);
+}
+
+.date-icon {
+    width: 26px;
+
+    color: #68746b;
+}
+
+.date-icon svg {
+    width: 22px;
+}
+
+.date-card div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.date-card strong {
+    font-size: 12px;
+}
+
+.date-card span {
+    color: #7c867e;
+
+    font-size: 11px;
+}
+
+/* =========================
+   STAT CARDS
+========================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+
+    margin-bottom: 17px;
+}
+
+.stat-card {
+    position: relative;
+
+    min-height: 156px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    padding: 22px;
+
+    border:
+            1px solid #e3e8e3;
+
+    border-radius: 12px;
+
+    background: #fff;
+
+    box-shadow:
+            0 3px 14px
+            rgba(25,45,30,.035);
+}
+
+.stat-icon-wrap {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    margin-right: 20px;
+
+    border-radius: 50%;
+}
+
+.stat-icon-wrap svg {
+    width: 31px;
+    height: 31px;
+}
+
+.stat-green .stat-icon-wrap {
+    background: #dff1db;
+    color: #2d8a30;
+}
+
+.stat-blue .stat-icon-wrap {
+    background: #e2eefb;
+    color: #155fc2;
+}
+
+.stat-orange .stat-icon-wrap {
+    background: #ffefdc;
+    color: #eb6a0a;
+}
+
+.stat-purple .stat-icon-wrap {
+    background: #f0e3fa;
+    color: #7227a7;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.stat-content > span {
+    color: #647068;
+
+    font-size: 13px;
+}
+
+.stat-content > strong {
+    margin-top: 6px;
+
+    font-size: 23px;
+    font-weight: 750;
+}
+
+.stat-content small {
+    margin-top: 18px;
+
+    color: #69746d;
+
+    font-size: 11px;
+}
+
+.stat-content small b {
+    color: #319531;
+}
+
+.mini-svg {
+    position: absolute;
+
+    width: 91px;
+    height: 48px;
+
+    right: 17px;
+    bottom: 22px;
+}
+
+.mini-svg.green {
+    color: #2e9832;
+}
+
+.mini-svg.blue {
+    color: #145ee0;
+}
+
+.mini-svg.orange {
+    color: #f0710e;
+}
+
+.mini-svg.purple {
+    color: #7a25bc;
+}
+
+/* =========================
+   MAIN GRID
+========================= */
+
+.hboard-main-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.04fr .96fr;
+
+    gap: 16px;
+}
+
+.hboard-box {
+    border:
+            1px solid #e3e8e3;
+
+    border-radius: 12px;
+
+    background: #fff;
+
+    box-shadow:
+            0 3px 14px
+            rgba(25,45,30,.035);
+
+    overflow: hidden;
+}
+
+.box-header {
+    height: 66px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 23px;
+
+    border-bottom:
+            1px solid #edf0ed;
+}
+
+.box-header h2 {
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 750;
+}
+
+.box-header button {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 9px 13px;
+
+    border:
+            1px solid #e0e6e0;
+
+    border-radius: 8px;
+
+    background: #fff;
+
+    color: #1b211d;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+.box-header button span {
+    font-size: 16px;
+}
+
+/* =========================
+   ORDERS
+========================= */
+
+.order-list {
+    padding: 0 20px;
+}
+
+.hboard-order {
+    min-height: 60px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.02fr
+        1.15fr
+        1.12fr
+        .78fr
+        .72fr;
+
+    gap: 10px;
+
+    align-items: center;
+
+    border-bottom:
+            1px solid #edf0ed;
+}
+
+.hboard-order strong {
+    display: block;
+
+    font-size: 11px;
+}
+
+.hboard-order span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #7a857d;
+
+    font-size: 9px;
+}
+
+.order-status {
+    width: max-content;
+
+    padding: 6px 10px;
+
+    border-radius: 7px;
+
+    font-size: 8px !important;
+    font-weight: 800;
+
+    margin: 0 !important;
+}
+
+.order-status.new {
+    background: #e8f6e4;
+
+    color: #378b32;
+}
+
+.order-status.confirmed {
+    background: #fff1df;
+
+    color: #df790f;
+}
+
+.order-status.progress {
+    background: #e8f1fb;
+
+    color: #2469b5;
+}
+
+.order-status.completed {
+    background: #e7f5e8;
+
+    color: #3b8d46;
+}
+
+.order-price {
+    text-align: right;
+}
+
+.all-orders-button {
+    display: block;
+
+    margin: 12px auto 15px;
+
+    padding: 9px 25px;
+
+    border:
+            1px solid #e0e6e0;
+
+    border-radius: 8px;
+
+    background: #fff;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+/* =========================
+   SALES CHART
+========================= */
+
+.sales-box {
+    min-height: 429px;
+}
+
+.chart-area {
+    position: relative;
+
+    height: 355px;
+
+    margin: 5px 24px 0 61px;
+}
+
+.chart-y {
+    position: absolute;
+
+    left: -45px;
+    top: 24px;
+    bottom: 46px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    color: #778179;
+
+    font-size: 10px;
+}
+
+.sales-svg {
+    width: 100%;
+    height: 295px;
+
+    display: block;
+}
+
+.chart-days {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 14px;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #6d7870;
+
+    font-size: 10px;
+}
+
+/* =========================
+   QUICK ACTIONS
+========================= */
+
+.quick-actions {
+    margin-top: 17px;
+
+    padding: 18px 20px 20px;
+
+    border:
+            1px solid #e3e8e3;
+
+    border-radius: 12px;
+
+    background: #fff;
+
+    box-shadow:
+            0 3px 14px
+            rgba(25,45,30,.035);
+}
+
+.quick-actions h2 {
+    margin:
+            0 0 17px;
+
+    font-size: 18px;
+}
+
+.quick-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.quick-action {
+    min-height: 90px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 13px 15px;
+
+    border-radius: 9px;
+
+    text-align: left;
+
+    background: #fff;
+
+    cursor: pointer;
+
+    transition:
+            transform .18s ease,
+            box-shadow .18s ease;
+}
+
+.quick-action:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+            0 7px 18px
+            rgba(20,40,25,.07);
+}
+
+.quick-green {
+    border: 1px solid #d4ead0;
+    background: #f8fcf7;
+}
+
+.quick-blue {
+    border: 1px solid #d6e4f5;
+    background: #f8fbff;
+}
+
+.quick-orange {
+    border: 1px solid #f2dfca;
+    background: #fffaf5;
+}
+
+.quick-purple {
+    border: 1px solid #e6d7f1;
+    background: #fcf9ff;
+}
+
+.quick-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+.quick-icon svg {
+    width: 23px;
+    height: 23px;
+}
+
+.quick-green .quick-icon {
+    background: #e2f3dd;
+    color: #328e32;
+}
+
+.quick-blue .quick-icon {
+    background: #e3effb;
+    color: #155fae;
+}
+
+.quick-orange .quick-icon {
+    background: #fff0dd;
+    color: #df6d0b;
+}
+
+.quick-purple .quick-icon {
+    background: #f0e4f9;
+    color: #7428a5;
+}
+
+.quick-action div {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.quick-action strong {
+    font-size: 12px;
+}
+
+.quick-action small {
+    margin-top: 5px;
+
+    color: #77827a;
+
+    font-size: 10px;
+}
+
+.quick-action i {
+    width: 33px;
+    height: 33px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    margin-left: auto;
+
+    border:
+            1px solid #dfe6df;
+
+    border-radius: 50%;
+
+    font-style: normal;
+
+    font-size: 17px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1250px) {
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .quick-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .hboard-main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 850px) {
+    .solar-sidebar {
+        width: 76px;
+    }
+
+    .solar-main {
+        width: calc(100% - 76px);
+
+        margin-left: 76px;
+    }
+
+    .solar-logo-text,
+    .solar-logo-sub,
+    .solar-nav-item span:last-child,
+    .solar-footer,
+    .solar-house {
+        display: none;
+    }
+
+    .solar-logo {
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .solar-nav-item {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .solar-content {
+        padding: 25px 18px;
+    }
+
+    .solar-search {
+        width: 300px;
+    }
+}
+
+@media (max-width: 650px) {
+    .stats-grid,
+    .quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hboard-heading {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .solar-search {
+        display: none;
+    }
+
+    .solar-profile div,
+    .solar-chevron {
+        display: none;
+    }
+
+    .hboard-order {
+        min-width: 680px;
+    }
+
+    .order-list {
+        overflow-x: auto;
+    }
+}
+/* =========================
+   ORDERS PAGE
+========================= */
+
+.orders-page {
+    width: 100%;
+}
+
+.orders-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.orders-heading h1 {
+    margin: 0;
+    font-size: 31px;
+    font-weight: 800;
+    letter-spacing: -.7px;
+}
+
+.orders-heading p {
+    margin: 7px 0 0;
+    color: #69756d;
+    font-size: 14px;
+}
+
+.orders-back-button {
+    height: 44px;
+    padding: 0 19px;
+
+    border: 1px solid #dce5dc;
+    border-radius: 9px;
+
+    background: #fff;
+    color: #28472e;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.orders-back-button:hover {
+    border-color: #63a64b;
+    background: #f1f8ef;
+    color: #438e34;
+}
+
+/* STATS */
+
+.orders-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+.orders-stat-card {
+    min-height: 112px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 20px;
+
+    border: 1px solid #e3e8e3;
+    border-radius: 12px;
+
+    background: #fff;
+
+    box-shadow:
+            0 3px 14px rgba(25,45,30,.035);
+}
+
+.orders-stat-icon {
+    width: 53px;
+    height: 53px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+}
+
+.orders-stat-icon.green {
+    background: #e1f2dc;
+}
+
+.orders-stat-icon.blue {
+    background: #e4effb;
+}
+
+.orders-stat-icon.orange {
+    background: #fff0df;
+}
+
+.orders-stat-icon.purple {
+    background: #f0e4f9;
+}
+
+.orders-stat-card span {
+    display: block;
+
+    color: #69756d;
+
+    font-size: 12px;
+}
+
+.orders-stat-card strong {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 25px;
+}
+
+/* PANEL */
+
+.orders-panel {
+    overflow: hidden;
+
+    border: 1px solid #e2e8e2;
+    border-radius: 13px;
+
+    background: #fff;
+
+    box-shadow:
+            0 3px 14px rgba(25,45,30,.035);
+}
+
+.orders-toolbar {
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 20px;
+
+    border-bottom: 1px solid #edf0ed;
+}
+
+.orders-search {
+    height: 43px;
+
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dfe5df;
+    border-radius: 9px;
+
+    color: #8a948c;
+}
+
+.orders-search input {
+    width: 100%;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    font-size: 12px;
+}
+
+.orders-filter,
+.orders-refresh {
+    height: 43px;
+
+    padding: 0 15px;
+
+    border: 1px solid #dfe5df;
+    border-radius: 9px;
+
+    background: #fff;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.orders-refresh:hover {
+    background: #f4f8f3;
+}
+
+/* TABLE */
+
+.orders-table-wrapper {
+    overflow-x: auto;
+}
+
+.orders-table {
+    width: 100%;
+    min-width: 900px;
+
+    border-collapse: collapse;
+}
+
+.orders-table th {
+    height: 48px;
+
+    padding: 0 18px;
+
+    background: #f8faf8;
+
+    border-bottom: 1px solid #e7ebe7;
+
+    color: #7a857d;
+
+    text-align: left;
+
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.orders-table td {
+    height: 76px;
+
+    padding: 10px 18px;
+
+    border-bottom: 1px solid #edf0ed;
+
+    font-size: 12px;
+}
+
+.orders-table tbody tr {
+    transition: background .15s;
+}
+
+.orders-table tbody tr:hover {
+    background: #fafcf9;
+}
+
+.orders-table td strong {
+    display: block;
+
+    font-size: 12px;
+}
+
+.orders-id {
+    color: #388936;
+}
+
+.orders-date,
+.orders-phone {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #8a948c;
+
+    font-size: 10px;
+}
+
+.orders-power {
+    display: inline-block;
+
+    padding: 6px 9px;
+
+    border-radius: 6px;
+
+    background: #f0f5ef;
+
+    color: #3c7540;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.orders-status {
+    display: inline-block;
+
+    padding: 7px 10px;
+
+    border-radius: 7px;
+
+    font-size: 8px;
+    font-weight: 800;
+}
+
+.orders-new {
+    background: #e5f5e1;
+    color: #358631;
+}
+
+.orders-confirmed {
+    background: #fff0dc;
+    color: #d8730d;
+}
+
+.orders-progress {
+    background: #e5effa;
+    color: #2567ad;
+}
+
+.orders-completed {
+    background: #e5f3e7;
+    color: #38894a;
+}
+
+.orders-price {
+    white-space: nowrap;
+}
+
+.orders-more {
+    width: 34px;
+    height: 34px;
+
+    border: 0;
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #7c877f;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.orders-more:hover {
+    background: #f1f5f1;
+}
+
+/* FOOTER */
+
+.orders-footer {
+    min-height: 66px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 20px;
+
+    color: #7b857e;
+
+    font-size: 11px;
+}
+
+.orders-footer strong {
+    color: #26352b;
+}
+
+.orders-pagination {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.orders-pagination button {
+    width: 32px;
+    height: 32px;
+
+    border: 1px solid #e0e6e0;
+    border-radius: 7px;
+
+    background: #fff;
+
+    color: #556159;
+
+    cursor: pointer;
+}
+
+.orders-pagination button:hover:not(:disabled) {
+    background: #f0f7ee;
+    border-color: #76a963;
+}
+
+.orders-pagination button.active {
+    border-color: #4e9639;
+    background: #4e9639;
+    color: #fff;
+}
+
+.orders-pagination button:disabled {
+    opacity: .45;
+    cursor: default;
+}
+
+@media (max-width: 1100px) {
+    .orders-stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .orders-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .orders-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .orders-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .orders-search {
+        width: 100%;
+    }
+
+    .orders-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 20px;
+    }
+}

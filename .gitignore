@@ -1,0 +1,23 @@
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+
+# Go
+*.exe
+*.test
+coverage.out
+
+# Frontend
+node_modules/
+dist/
+.vite/
+
+# IDE and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
